@@ -33,18 +33,43 @@ Each template folder holds:
 
 ## 🚀 Quick Start
 
-```bash
-# 1 · Fork this repo on GitHub
-# 2 · Clone YOUR fork locally
-git clone https://github.com/[your-username]/vibe-site-lab.git
-cd vibe-site-lab
+1. **Fork & Clone**
 
-# 3 · Copy ONE template into the repo root (example: minimal‑sections)
-cp -r templates/minimal-sections/* .
+   ```bash
+   # Fork this repository first, then clone your fork
+   git clone https://github.com/[your-username]/vibe-site-lab.git
+   cd vibe-site-lab
+   ```
 
-# 4 · Open in Windsurf or Cursor
-cursor .
-```
+2. **Choose a Template**
+
+   ```bash
+   # Copy your chosen template to the root (example: minimal-sections)
+   cp -r templates/minimal-sections/* .
+
+   # Or for Windows:
+   # xcopy templates\minimal-sections\* . /E /H
+   ```
+
+3. **Open & Edit**
+
+   ```bash
+   # Open in your preferred editor (we recommend Cursor)
+   cursor .
+
+   # Or just open index.html in your browser to preview
+   ```
+
+4. **Customize**
+   - Replace `avatar.jpg` in the assets folder
+   - Edit `index.html` to update content
+   - Modify `styles.css` to adjust the design
+
+💡 **Pro Tips:**
+
+- Each template has its own prompt guide (e.g., `minimal-sections-prompt-guide.md`)
+- Use the AI prompts section below for quick customization
+- Test your site in different browsers and screen sizes
 
 ## 🗣️ Refining with AI Prompts
 

@@ -2,15 +2,15 @@
 :root {
     --clr-backdrop: #C7E3F2;  /* light blue background */
     --clr-card-top:   #ffffff; /* header */
-    --clr-card-mid:   #4299FF; /* mid blocks */
-    --clr-card-bot:   #277DE3; /* bottom block */
+    --clr-card-mid:   #3288ED; /* mid blocks - made slightly darker for better contrast */
+    --clr-card-bot:   #1E6FD4; /* bottom block - adjusted for harmony */
     --clr-text-dark:  #0f172a;
-    --clr-text-light: #eaf4ff;
+    --clr-text-light: #ffffff; /* changed to pure white for better contrast */
     --radius: 12px;
     --gap: 1.5rem;
     --section-gap: 2px; /* subtle gap between sections */
     --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --content-width: 140px;  /* width for vertical headings column */
+    --content-width: 160px;  /* increased width for vertical headings */
     --card-shadow: 
         0 4px 6px -1px rgb(0 0 0 / 0.1),
         0 2px 4px -2px rgb(0 0 0 / 0.1),
@@ -38,7 +38,7 @@ body {
   
 .card {
   width: 100%;
-  max-width: 560px;
+  max-width: 680px; /* increased from 560px for better content flow */
   border-radius: var(--radius);
   overflow: hidden; /* round inner edges */
   box-shadow: var(--card-shadow);
@@ -48,7 +48,7 @@ body {
   background: var(--clr-card-mid);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15); /* slightly more visible border */
 }
   
 /* ---------- HERO ---------- */
@@ -109,15 +109,15 @@ body {
   
 /* ---------- SECTIONS ---------- */
 .block {
-  padding: 2.5rem;
-  color: white;
+  padding: 2.5rem 3rem; /* increased horizontal padding */
+  color: var(--clr-text-light);
   display: grid;
   grid-template-columns: var(--content-width) 1fr;
-  gap: 1.5rem;
+  gap: 2rem; /* increased from 1.5rem for better separation */
   position: relative;
   background: linear-gradient(
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0.05)
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0.06)
   );
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -129,9 +129,8 @@ body {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   font-weight: 600;
-  color: rgba(255, 255, 255, 1);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  opacity: 1;
+  color: var(--clr-text-light);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
   
 /* Section content typography */
@@ -141,17 +140,17 @@ body {
   line-height: 1.6;
   letter-spacing: -0.01em;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--clr-text-light);
 }
   
 .about { background: var(--clr-card-mid); }
 .work  { 
-  background: #3288ED;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
+  background: var(--clr-card-mid);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.15);
 }
 .contact { 
   background: var(--clr-card-bot);
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.15);
 }
   
 .work ul { 
