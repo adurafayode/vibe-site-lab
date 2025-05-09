@@ -1,0 +1,334 @@
+/* ======= Sidebar‑Résumé (text‑only) ================================ */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap');
+
+:root {
+  --clr-bg: #f8fafc;
+  --clr-surface: #ffffff;
+  --clr-primary: #0f766e;
+  --clr-text: #0f172a;
+  --clr-muted: #64748b;
+  --sidebar-w: 230px;
+  --radius: 10px;
+  --shadow: 0 4px 12px rgba(0,0,0,.05);
+  --font-heading: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-body: "Outfit", system-ui, sans-serif;
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  --glass-gradient: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.4)
+  );
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  display: flex;
+  min-height: 100vh;
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+}
+
+/* SIDEBAR ----------------------------------------------------------- */
+.sidebar {
+  width: var(--sidebar-w);
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  padding: 2rem;
+  background: var(--glass-gradient);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-right: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.sidebar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.sidebar > * {
+  position: relative;
+  z-index: 1;
+}
+
+.sidebar h1 { 
+  font-family: var(--font-heading);
+  font-size: 1.5rem; 
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(to right, var(--clr-text), #334155);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.role { 
+  font-family: var(--font-body);
+  color: var(--clr-muted);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.sidebar nav {
+  display: flex; 
+  flex-direction: column; 
+  gap: 0.8rem;
+  width: 100%;
+}
+.sidebar nav a {
+  font-family: var(--font-heading);
+  text-decoration: none; 
+  color: var(--clr-text); 
+  font-weight: 500;
+  padding: 0.3rem 0;
+  transition: color 0.2s, transform 0.2s;
+}
+.sidebar nav a:hover { 
+  color: var(--clr-primary);
+  transform: translateX(4px);
+}
+
+.social { display: flex; gap: 0.8rem; margin-top: auto; }
+.social a {
+  font-size: 1.1rem; color: var(--clr-primary); text-decoration: none;
+  transition: color .2s;
+}
+.social a:hover { color: var(--clr-text); }
+
+/* MAIN AREA --------------------------------------------------------- */
+main {
+  flex: 1;
+  padding: 3rem 2rem 4rem;
+  max-width: 860px;
+  margin: 0 auto;
+}
+section { margin-bottom: 3rem; }
+h2 { 
+  font-family: var(--font-heading);
+  font-size: 1.4rem; 
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.pill-list { 
+  list-style: none; 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 0.8rem; 
+}
+
+.pill-list li {
+  background: var(--clr-surface);
+  color: var(--clr-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  border: 1px solid rgba(15, 118, 110, 0.2);
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.pill-list li:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  border-color: var(--clr-primary);
+  background: linear-gradient(
+    to right,
+    rgba(15, 118, 110, 0.05),
+    rgba(15, 118, 110, 0.1)
+  );
+}
+
+.proj {
+  background: var(--clr-surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.6rem;
+  margin-bottom: 1.25rem;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.proj:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+  border-color: rgba(15, 118, 110, 0.1);
+  transform: translateY(-2px);
+}
+
+.proj h3 { 
+  font-family: var(--font-heading);
+  margin-bottom: 0.6rem; 
+  font-size: 1.2rem;
+  color: var(--clr-text);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.proj p {
+  color: var(--clr-muted);
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
+}
+
+.btn {
+  font-family: var(--font-heading);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--clr-primary);
+  padding: 0.5rem 1.2rem;
+  border: 1.5px solid var(--clr-primary);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--clr-primary);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.btn::after {
+  content: "→";
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: all 0.2s ease;
+}
+
+.btn:hover::after {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+footer { 
+  font-size: 0.85rem; 
+  color: var(--clr-muted);
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(100, 116, 139, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer a {
+  color: var(--clr-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+footer a:hover {
+  color: var(--clr-text);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-right: none;
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    z-index: 10;
+  }
+
+  .sidebar::before {
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.15),
+      transparent
+    );
+  }
+
+  .sidebar nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+  }
+
+  .sidebar nav a {
+    padding: 0.4rem 0.8rem;
+  }
+
+  .sidebar nav a:hover {
+    transform: translateY(-2px);
+    transform: translateX(0);
+  }
+
+  .social {
+    margin-top: 1rem;
+    justify-content: center;
+  }
+
+  main {
+    padding: 2rem 1.5rem;
+  }
+
+  .pill-list {
+    justify-content: center;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 0.8rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --sidebar-w: 100%;
+  }
+
+  .sidebar h1 {
+    font-size: 1.3rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .role {
+    text-align: center;
+    width: 100%;
+  }
+
+  .proj {
+    padding: 1.2rem;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
