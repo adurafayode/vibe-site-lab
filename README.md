@@ -1,4 +1,6 @@
-# 🚀 Build‑Your‑Brand in 60 Minutes
+# 🚀 Vibe Sites: Craft Your Digital Identity
+
+> Part of the "Vibe Coding" Workshop Series - Create stunning personal sites with minimal effort.
 
 AI Knowledge Series – **"Vibe Coding"** Workshop
 
